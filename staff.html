@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Staff</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="staff">
+
+<header>
+    <div class="logo">
+        <img src="medicarelogo.jpeg" alt="MediCare Logo">
+        <div>
+            <h1>MediCare</h1>
+            <p>Hospital Staff Scheduling System</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="staff.html">Staff</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="replacement.html">Replacement</a>
+         <a href="approval.html">Approval</a>
+        <a href="openswap.html">Open and Swap</a>
+    </nav>
+
+    <button id="logoutBtn" onclick="logoutUser()">Log out</button>
+</header>
+
+<section class="management-page">
+
+    <div class="page-heading">
+        <h2>Hospital Staff</h2>
+        <p>View and manage hospital staff information.</p>
+    </div>
+
+    <div class="management-cards">
+
+        <div class="management-card">
+            <p>Total Staff</p>
+            <h2>9</h2>
+        </div>
+
+        <div class="management-card">
+            <p>Doctors</p>
+            <h2>4</h2>
+        </div>
+
+        <div class="management-card">
+            <p>Nurses</p>
+            <h2>3</h2>
+        </div>
+
+    </div>
+
+    <div class="management-tools">
+        <input type="text" id="staffSearch"
+               placeholder="Search staff name or ID...">
+
+        <select id="staffDepartmentFilter">
+            <option value="all">All Departments</option>
+            <option value="Emergency">Emergency</option>
+            <option value="Intensive Care Unit">Intensive Care Unit</option>
+            <option value="Operating Room">Operating Room</option>
+            <option value="Human Resources">Human Resources</option>
+        </select>
+    </div>
+    <div class="table-box">
+        <table id="staffTable">
+            <thead>
+                <tr>
+                    <th>Staff ID</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>DOC001</td>
+                    <td>Ryza</td>
+                    <td>Doctor</td>
+                    <td>Emergency</td>
+                    <td id="status-DOC001" class="staff-status active">Active</td>
+                </tr>
+
+                <tr>
+                    <td>NUR001</td>
+                    <td>Susej</td>
+                    <td>Nurse</td>
+                    <td>Emergency</td>
+                    <td id="status-NUR001" class="staff-status active">Active</td>
+                </tr>
+
+                <tr>
+                    <td>NUR002</td>
+                    <td>Angel</td>
+                    <td>Nurse</td>
+                    <td>Intensive Care Unit</td>
+                    <td id="status-NUR002" class="staff-status active">Active</td>
+                </tr>
+
+                <tr>
+                    <td>NUR003</td>
+                    <td>Eugene</td>
+                    <td>Nurse</td>
+                    <td>Intensive Care Unit</td>
+                    <td id="status-NUR003" class="staff-status active">Active</td>
+                </tr>
+
+                <tr>
+                    <td>DOC002</td>
+                    <td>Carlo</td>
+                    <td>Doctor</td>
+                    <td>Operating Room</td>
+                    <td id="status-DOC002" class="staff-status active">Active</td>
+                </tr>
+
+                <tr>
+                    <td>HR001</td>
+                    <td>Lisa</td>
+                    <td>HR</td>
+                    <td>Human Resources</td>
+                    <td id="status-HR001" class="staff-status active">Active</td>
+                </tr>
+
+                <tr>
+                    <td>HR002</td>
+                    <td>Cedric</td>
+                    <td>HR</td>
+                    <td>Human Resources</td>
+                    <td id="status-HR002" class="staff-status active">Active</td>
+                </tr>
+
+                <tr>
+                    <td>DOC003</td>
+                    <td>Sandy</td>
+                    <td>Doctor</td>
+                    <td>Emergency</td>
+                    <td id="status-DOC003" class="staff-status active">Active</td>
+                </tr>
+
+                <tr>
+                    <td>DOC004</td>
+                    <td>Alyanna</td>
+                    <td>Doctor</td>
+                    <td>Intensive Care Unit</td>
+                    <td id="status-DOC004" class="staff-status active">Active</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+<footer>
+    <h3>MediCare</h3>
+    <p>Hospital Staff Scheduling and Shift Management System</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="staff.js"></script>
+
+</body>
+</html>

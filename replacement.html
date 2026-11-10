@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MediCare - Shift Replacement</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body data-page="replacement">
+
+<header>
+    <div class="logo">
+        <img src="medicarelogo.jpeg" alt="MediCare Logo">
+        <div>
+            <h1>MediCare</h1>
+            <p>Hospital Staff Scheduling System</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="staff.html">Staff</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="replacement.html">Replacement</a>
+        <a href="approval.html">Approval</a>
+        <a href="openswap.html">Open and Swap</a>
+        <button id="logoutBtn" onclick="logoutUser()">
+            <b>Log out</b>
+        </button>
+    </nav>
+</header>
+
+<main class="replacement-page">
+
+    <h2>Automatic Shift Replacement</h2>
+
+    <p>
+        If a staff member is sick or on leave,
+        MediCare will find a replacement.
+    </p>
+
+    <label for="staff">Staff Member</label>
+    <select id="staff">
+        <option value="NUR001">Susej - Nurse</option>
+        <option value="NUR002">Angel - Nurse</option>
+        <option value="DOC001">Ryza - Doctor</option>
+        <option value="DOC002">Carlo - Doctor</option>
+        <option value="NUR003">Eugene - Nurse</option>
+        <option value="DOC003">Sandy - Doctor</option>
+        <option value="DOC004">Alyanna - Doctor</option>
+    </select>
+
+    <label for="reason">Reason</label>
+    <select id="reason">
+        <option value="Call in Sick">Call in Sick</option>
+        <option value="Leave Request">Leave Request</option>
+    </select>
+
+    <label for="shift">Shift</label>
+    <select id="shift">
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Midnight">Midnight</option>
+    </select>
+
+    <label for="replacementDate">Replacement Date</label>
+    <input type="date" id="replacementDate" required>
+
+    <button onclick="findReplacement()">
+        Find Replacement
+    </button>
+
+    <div id="result"></div>
+
+</main>
+<label for="requestReason">Reason for Leave:</label>
+
+<textarea
+    id="requestReason"
+    name="requestReason"
+    placeholder="Please explain why you are requesting leave..."
+    rows="4"
+    required>
+</textarea>
+
+</body>
+</html>

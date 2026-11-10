@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Schedule</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="schedule">
+
+<header>
+    <div class="logo">
+        <img src="medicarelogo.jpeg" alt="MediCare Logo">
+        <div>
+            <h1>MediCare</h1>
+            <p>Hospital Staff Scheduling System</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="staff.html">Staff</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="replacement.html">Replacement</a>
+         <a href="approval.html">Approval</a>
+        <a href="openswap.html">Open and Swap</a>
+    </nav>
+
+    <button id="logoutBtn" onclick="logoutUser()">Log out</button>
+</header>
+
+<section class="management-page">
+
+    <div class="page-heading">
+        <h2>Staff Schedule</h2>
+        <p>View and monitor the assigned hospital staff shifts.</p>
+    </div>
+
+    <div class="management-cards">
+
+        <div class="management-card">
+            <p>Total Schedules</p>
+            <h2 id="totalSchedules">9</h2>
+        </div>
+
+        <div class="management-card">
+            <p>Morning Shift</p>
+            <h2 id="morningCount">1</h2>
+        </div>
+
+        <div class="management-card">
+            <p>Afternoon Shift</p>
+            <h2 id="afternoonCount">3</h2>
+        </div>
+
+        <div class="management-card">
+            <p>Midnight Shift</p>
+            <h2 id="midnightCount">5</h2>
+        </div>
+
+    </div>
+
+    <div class="management-tools">
+
+        <input type="text" id="scheduleSearch"
+               placeholder="Search staff name...">
+
+        <select id="shiftFilter">
+            <option value="all">All Shifts</option>
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Night">Midnight</option>
+        </select>
+
+        <select id="departmentFilter">
+            <option value="all">All Departments</option>
+            <option value="Emergency">Emergency</option>
+            <option value="Pediatrics">Pediatrics</option>
+            <option value="Operating Room">Operating Room</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Intensive Care Unit">Intensive Care Unit</option>
+            <option value="Labor and Delivery">Labor and Delivery</option>
+        </select>
+
+    </div>
+    <div class="table-box">
+        <table>
+            <thead>
+                <tr>
+                    <th>Staff Name</th>
+                    <th>Position</th>
+                    <th>Department</th>
+                    <th>Date</th>
+                    <th>Shift</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="scheduleBody">
+
+                <tr data-staff-id="DOC001" data-date="2026-11-05" data-shift="Night">
+                    <td>Ryza</td><td>Doctor</td><td>Emergency</td>
+                    <td>Nov. 5, 2026</td>
+                    <td><span class="shift-label midnight">Midnight</span><small>10:00 PM - 3:00 AM</small></td>
+                    <td data-status-cell>Scheduled</td>
+                </tr>
+
+                <tr data-staff-id="NUR001" data-date="2026-11-05" data-shift="Night">
+                    <td>Susej</td><td>Nurse</td><td>Emergency</td>
+                    <td>Nov. 5, 2026</td>
+                    <td><span class="shift-label midnight">Midnight</span><small>10:00 PM - 3:00 AM</small></td>
+                    <td data-status-cell>Scheduled</td>
+                </tr>
+
+                <tr data-staff-id="NUR003" data-date="2026-11-05" data-shift="Afternoon">
+                    <td>Eugene</td><td>Nurse</td><td>Pediatrics</td>
+                    <td>Nov. 5, 2026</td>
+                    <td><span class="shift-label afternoon">Afternoon</span><small>3:00 PM - 11:00 PM</small></td>
+                    <td data-status-cell>Scheduled</td>
+                </tr>
+
+                <tr data-staff-id="NUR002" data-date="2026-11-05" data-shift="Afternoon">
+                    <td>Angel</td><td>Nurse</td><td>Pediatrics</td>
+                    <td>Nov. 5, 2026</td>
+                    <td><span class="shift-label afternoon">Afternoon</span><small>3:00 PM - 11:00 PM</small></td>
+                    <td data-status-cell>Scheduled</td>
+                </tr>
+
+                <tr data-staff-id="DOC002" data-date="2026-11-05" data-shift="Night">
+                    <td>Carlo</td><td>Doctor</td><td>Operating Room</td>
+                    <td>Nov. 5, 2026</td>
+                    <td><span class="shift-label midnight">Midnight</span><small>11:00 PM - 7:00 AM</small></td>
+                    <td data-status-cell>Scheduled</td>
+                </tr>
+
+                <tr data-staff-id="DOC004" data-date="2026-11-06" data-shift="Morning">
+                    <td>Alyanna</td><td>Doctor</td><td>Cardiology</td>
+                    <td>Nov. 6, 2026</td>
+                    <td><span class="shift-label morning">Morning</span><small>3:00 AM - 11:00 AM</small></td>
+                    <td data-status-cell>Scheduled</td>
+                </tr>
+
+                <tr data-staff-id="NUR002" data-date="2026-11-06" data-shift="Afternoon">
+                    <td>Angel</td><td>Nurse</td><td>Intensive Care Unit</td>
+                    <td>Nov. 6, 2026</td>
+                    <td><span class="shift-label afternoon">Afternoon</span><small>3:00 PM - 11:00 PM</small></td>
+                    <td data-status-cell>Scheduled</td>
+                </tr>
+
+                <tr data-staff-id="NUR003" data-date="2026-11-06" data-shift="Night">
+                    <td>Eugene</td><td>Nurse</td><td>Labor and Delivery</td>
+                    <td>Nov. 6, 2026</td>
+                    <td><span class="shift-label midnight">Midnight</span><small>11:00 PM - 8:00 AM</small></td>
+                    <td data-status-cell>Scheduled</td>
+                </tr>
+
+                <tr data-staff-id="DOC003" data-date="2026-11-07" data-shift="Afternoon">
+                    <td>Sandy</td><td>Doctor</td><td>Labor and Delivery</td>
+                    <td>Nov. 7, 2026</td>
+                    <td><span class="shift-label afternoon">Afternoon</span><small>1:00 PM - 4:00 AM</small></td>
+                    <td data-status-cell>Scheduled</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="shift-legend">
+        <strong>Shift Labels:</strong>
+        <span class="shift-label morning">Morning</span>
+        <span class="shift-label afternoon">Afternoon</span>
+        <span class="shift-label midnight">Midnight</span>
+    </div>
+
+</section>
+
+<footer>
+    <h3>MediCare</h3>
+    <p>Hospital Staff Scheduling and Shift Management System</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="schedule.js"></script>
+<script src="shift-approval.js"></script>
+
+</body>
+</html>

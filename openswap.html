@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Open Shift and Swap Shift</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="openswap.css">
+   
+</button>
+</head>
+
+<body data-page="openswap">
+
+<header>
+    <div class="logo">
+        <img src="medicarelogo.jpeg" alt="MediCare Logo">
+        <div>
+            <h1>MediCare</h1>
+            <p>Hospital Staff Scheduling System</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="staff.html">Staff</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="replacement.html">Replacement</a>
+        <a href="approval.html">Approval</a>
+        <a href="openswap.html">Open and Swap</a>
+    </nav>
+
+    <button id="logoutBtn" onclick="logoutUser()">
+        <b>Log out</b>
+    </button>
+</header>
+
+<main class="openswap-container">
+
+    <h2 class="openswap-title">Open Shift and Swap Shift</h2>
+
+    <div class="tabs">
+        <button type="button" class="tab active"
+            id="openTab" onclick="showShiftTab('open')">
+            Open Shift
+        </button>
+
+        <button type="button" class="tab"
+            id="swapTab" onclick="showShiftTab('swap')">
+            Swap Shift
+        </button>
+    </div>
+
+    <section class="openswap-card" id="openSection">
+        <h2>Open Shift Request</h2>
+        <p>Submit one of your assigned shifts to HR for approval to make it available.</p>
+
+        <form id="openForm">
+
+            <label for="openStaff">Staff Name</label>
+            <select id="openStaff" required>
+                <option value="">Select your name</option>
+            </select>
+
+            <label for="openSchedule">Your Scheduled Shift</label>
+            <select id="openSchedule" required>
+                <option value="">Select a schedule</option>
+            </select>
+
+            <label for="openReason">Reason / Additional Information</label>
+            <textarea id="openReason" required
+                placeholder="Enter your reason..."></textarea>
+
+            <button class="submit-btn" type="submit">
+                Submit Open Shift Request
+            </button>
+        </form>
+
+        <p id="openMessage" class="form-message"></p>
+    </section>
+
+    <section class="openswap-card hidden" id="swapSection">
+        <h2>Swap Shift Request</h2>
+        <p>Request to exchange your assigned shift with another staff member.</p>
+
+        <form id="swapForm">
+
+            <label for="swapStaff">Your Name</label>
+            <select id="swapStaff" required>
+                <option value="">Select your name</option>
+            </select>
+
+            <label for="mySchedule">Your Scheduled Shift</label>
+            <select id="mySchedule" required>
+                <option value="">Select your schedule</option>
+            </select>
+
+            <label for="targetStaff">Staff Member You Want to Swap With</label>
+            <select id="targetStaff" required>
+                <option value="">Select another staff member</option>
+            </select>
+
+            <label for="targetSchedule">Their Scheduled Shift</label>
+            <select id="targetSchedule" required>
+                <option value="">Select their schedule</option>
+            </select>
+
+            <label for="swapReason">Reason for Swap</label>
+            <textarea id="swapReason" required
+                placeholder="Enter your reason..."></textarea>
+
+            <button class="submit-btn" type="submit">
+                Submit Swap Request
+            </button>
+        </form>
+
+        <p id="swapMessage" class="form-message"></p>
+    </section>
+
+    <section class="openswap-card">
+        <h2>My Open and Swap Requests</h2>
+        <div id="myShiftRequests">
+            <p>No requests submitted yet.</p>
+        </div>
+
+        <p class="approval-note">
+            Your requests will remain pending until HR reviews them
+            on the Approval page.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <h3>MediCare</h3>
+    <p>Hospital Staff Scheduling and Shift Management System</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="openswap.js"></script>
+
+</body>
+</html>

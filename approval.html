@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Request Approval | MediCare</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-page="approval">
+    <header>
+        <div class="logo">
+            <img src="medicarelogo.jpeg" alt="MediCare Logo">
+
+            <div>
+                <h1>MediCare</h1>
+                <p>Hospital Staff Scheduling System</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="staff.html">Staff</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="replacement.html">Replacement</a>
+            <a href="approval.html">Approval</a>
+            <a href="openswap.html">Open and Swap</a>
+        </nav>
+
+        <button id="logoutBtn" onclick="logoutUser()">
+            Log out
+        </button>
+    </header>
+
+
+    <section class="staff-section">
+
+        <h2>Request Approval</h2>
+
+        <p>
+            Review staff requests and decide whether
+            to approve or reject them.
+        </p>
+
+
+       
+        <div class="leave-request-box">
+
+            <h2>Leave Request Approval</h2>
+
+            <p>
+                Review staff leave requests, including
+                their reasons, dates, and assigned shifts.
+            </p>
+
+            <div id="approvalRequests">
+                <p>Loading leave requests...</p>
+            </div>
+
+        </div>
+
+
+    
+        <div class="leave-request-box">
+
+            <h2>Swap Shift Approval</h2>
+
+            <p>
+                Review requests from staff members
+                who want to exchange their shifts.
+            </p>
+
+            <div id="swapApprovalRequests">
+                <p>Loading swap shift requests...</p>
+            </div>
+
+        </div>
+
+
+        <div class="leave-request-box">
+
+            <h2>Open Shift Approval</h2>
+
+            <p>
+                Review requests from staff members
+                who want to take an available shift.
+            </p>
+
+            <div id="openShiftApprovalRequests">
+                <p>Loading open shift requests...</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <h3>MediCare Hospital</h3>
+        <p>Hospital Staff Scheduling System</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="shift-approval.js"></script>
+
+</body>
+</html>
